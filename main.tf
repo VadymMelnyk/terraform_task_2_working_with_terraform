@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "3.105.0"
     }
   }
@@ -12,7 +12,7 @@ data "archive_file" "tf_code_zip" {
   type        = "zip"
   output_path = "${path.module}/my-code.zip"
   source_dir  = path.module
-  
+
   # Ігноруємо сам ZIP-архів та системну папку .terraform, щоб не закольцовувати архів
   excludes = [
     "my-code.zip",
